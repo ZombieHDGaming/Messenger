@@ -9,7 +9,7 @@ import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import net.minecraftforge.fml.relauncher.Side;
 import org.dimdev.messenger.network.PacketHandler;
-import org.dimdev.messenger.network.messages.NotificationChat;
+import org.dimdev.messenger.messages.NotificationChat;
 
 import javax.annotation.Nullable;
 

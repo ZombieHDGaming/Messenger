@@ -10,7 +10,7 @@ import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.dimdev.messenger.network.PacketHandler;
-import org.dimdev.messenger.network.messages.NotificationToast;
+import org.dimdev.messenger.messages.NotificationToast;
 
 import javax.annotation.Nullable;
 

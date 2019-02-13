@@ -1,4 +1,4 @@
-package org.dimdev.messenger.network.messages;
+package org.dimdev.messenger.messages;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.text.ITextComponent;

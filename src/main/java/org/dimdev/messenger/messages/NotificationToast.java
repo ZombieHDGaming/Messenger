@@ -1,4 +1,4 @@
-package org.dimdev.messenger.network.messages;
+package org.dimdev.messenger.messages;
 
 import net.minecraft.client.gui.toasts.GuiToast;
 import net.minecraft.client.gui.toasts.IToast;
