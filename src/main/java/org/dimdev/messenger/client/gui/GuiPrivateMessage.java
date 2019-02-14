@@ -39,10 +39,10 @@ public class GuiPrivateMessage extends GuiScreen {
         drawDefaultBackground();
         super.drawScreen(mouseX, mouseY, partialTicks);
 
-        fontRenderer.drawString("§lPrivate Message", width / 2 - (fontRenderer.getStringWidth("§lPrivate Message") / 2), height / 2 - 80, 0xFFFFFF, true);
+        fontRenderer.drawString("§e§lPrivate Message", width / 2 - (fontRenderer.getStringWidth("§lPrivate Message") / 2), height / 2 - 80, 0xFFFFFF, true);
 
-        fontRenderer.drawString("§lPlayer", width / 2 - 100, height / 2 - 50, 0xFFFFFF, true);
-        fontRenderer.drawString("§lMessage", width / 2 - 100, height / 2 - 10, 0xFFFFFF, true);
+        fontRenderer.drawString("§e§lPlayer", width / 2 - 100, height / 2 - 50, 0xFFFFFF, true);
+        fontRenderer.drawString("§e§lMessage", width / 2 - 100, height / 2 - 10, 0xFFFFFF, true);
 
         playerName.drawTextBox();
         message.drawTextBox();

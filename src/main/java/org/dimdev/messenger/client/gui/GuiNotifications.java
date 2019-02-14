@@ -43,7 +43,7 @@ public class GuiNotifications extends GuiScreen {
         subtitleField.setText("");
 
         slider = new GuiSlider(4, width / 2 - 75, height / 2 + 25, 150, 20, "", "", 1, 10, 1, false, true);
-
+        buttonList.add(slider);
         Keyboard.enableRepeatEvents(true);
     }
 
@@ -69,7 +69,6 @@ public class GuiNotifications extends GuiScreen {
 
         titleField.drawTextBox();
         subtitleField.drawTextBox();
-        slider.drawButton(mc, mouseX, mouseY, partialTicks);
     }
 
     @Override

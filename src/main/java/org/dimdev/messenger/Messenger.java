@@ -7,8 +7,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import org.dimdev.messenger.commands.CommandPrivateMessage;
 import org.dimdev.messenger.network.PacketHandler;
@@ -31,10 +29,5 @@ public class Messenger
     @EventHandler
     public void init(FMLInitializationEvent event) {
         ClientCommandHandler.instance.registerCommand(new CommandPrivateMessage());
-    }
-
-    @SubscribeEvent
-    public void server(FMLServerStartingEvent event) {
-        //event.registerServerCommand(new CommandPrivateMessage());
     }
 }
