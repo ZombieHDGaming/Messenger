@@ -16,9 +16,9 @@ public class NotificationToast implements IToast {
     private String title;
     private String subtitle;
 
-    public NotificationToast(ITextComponent titleComponent, @Nullable ITextComponent subtitleComponent) {
-        this.title = titleComponent.getUnformattedText();
-        this.subtitle = subtitleComponent == null ? null : subtitleComponent.getUnformattedText();
+    public NotificationToast(String titleComponent, @Nullable String subtitleComponent) {
+        this.title = titleComponent;
+        this.subtitle = subtitleComponent == null ? null : subtitleComponent;
     }
 
     @Override

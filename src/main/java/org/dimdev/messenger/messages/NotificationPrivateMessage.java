@@ -6,12 +6,12 @@ import org.dimdev.messenger.Utils;
 
 import javax.annotation.Nullable;
 
-public class NotificationChat {
+public class NotificationPrivateMessage {
 
     private String title;
     private String message;
 
-    public NotificationChat(String titleComponent, @Nullable String subtitleComponent) {
+    public NotificationPrivateMessage(String titleComponent, @Nullable String subtitleComponent) {
         this.title = titleComponent;
         this.message = subtitleComponent == null ? " " : subtitleComponent;
     }
@@ -22,5 +22,4 @@ public class NotificationChat {
         Minecraft.getMinecraft().player.sendMessage(new TextComponentString(Utils.colorize(message)));
         Minecraft.getMinecraft().player.sendMessage(new TextComponentString("§7§m-----------------------------------------------------"));
     }
-
 }

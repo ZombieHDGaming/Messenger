@@ -22,6 +22,7 @@ public class GuiNotifications extends GuiScreen {
     private GuiSlider slider;
     private GuiButton btnDone;
     private GuiButton btnCancel;
+    private boolean sliderHandled;
 
     @Override
     public void initGui() {
@@ -50,7 +51,10 @@ public class GuiNotifications extends GuiScreen {
     public void updateScreen() {
         titleField.updateCursorCounter();
         subtitleField.updateCursorCounter();
-        slider.updateSlider();
+        if (sliderHandled) {
+            slider.updateSlider();
+            sliderHandled = false;
+        }
     }
 
     @Override
@@ -107,6 +111,7 @@ public class GuiNotifications extends GuiScreen {
                 || subtitleField.mouseClicked(mouseX, mouseY, mouseButton)
                 || slider.mousePressed(mc, mouseX, mouseY)) {
             mouseHandled = true;
+            sliderHandled = true;
         }
     }
 

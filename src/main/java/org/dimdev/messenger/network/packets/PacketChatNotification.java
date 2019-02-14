@@ -43,12 +43,17 @@ public class PacketChatNotification implements IMessage {
     public static class Handler implements IMessageHandler<PacketChatNotification, IMessage> {
         @Override
         public IMessage onMessage(PacketChatNotification message, MessageContext ctx) {
-            PacketHandler.getThreadListener(ctx).addScheduledTask(() ->
-                    new NotificationChat(
-                            new TextComponentString(message.title),
-                            new TextComponentString(message.subtitle)
-                    ).sendMessage());
-            return null;
+            if (ctx.side == Side.SERVER) {
+                PacketHandler.INSTANCE.sendToAll(message);
+                return null;
+            } else {
+                Minecraft.getMinecraft().addScheduledTask(() ->
+                        new NotificationChat(
+                                message.title,
+                                message.subtitle
+                        ).sendMessage());
+                return null;
+            }
         }
     }
 

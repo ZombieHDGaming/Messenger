@@ -20,7 +20,7 @@ public class PacketToastNotification implements IMessage {
     private String subtitle;
 
     public PacketToastNotification() {
-        this.title = " ";
+        this.title = "";
         this.subtitle = null;
     }
 
@@ -45,19 +45,20 @@ public class PacketToastNotification implements IMessage {
         @Override
         public IMessage onMessage(PacketToastNotification message, MessageContext ctx) {
             if (ctx.side != Side.CLIENT) {
+                PacketHandler.INSTANCE.sendToAll(message);
                 return null;
             }
 
-            process(message, ctx);
+            process(message);
             return null;
         }
 
         @SideOnly(Side.CLIENT)
-        public void process(PacketToastNotification message, MessageContext ctx) {
-            PacketHandler.getThreadListener(ctx).addScheduledTask(() ->
+        public void process(PacketToastNotification message) {
+            Minecraft.getMinecraft().addScheduledTask(() ->
                     Minecraft.getMinecraft().getToastGui().add(new NotificationToast(
-                                    new TextComponentString(message.title),
-                                    new TextComponentString(message.subtitle)
+                                    message.title,
+                                    message.subtitle
                             )
                     )
             );
